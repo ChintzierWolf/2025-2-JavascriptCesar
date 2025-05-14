@@ -7,25 +7,33 @@
 
 const { ask } = require('../helpers/input');
 
-function diffDays(actualDate, birthDate) {
-  const diff = actualDate - birthDate;
-  const edadEnDias = Math.floor(diff / (1000 * 60 * 60 * 24));
+function diffDays(actualDate, birthDate)
+{
+    const diff = actualDate - birthDate;
+    const edadEnDias = Math.floor(diff / (86400000))
+    //Para obtener el resultado de la fecha completa, se debe de multiplicar por 10000, 60 60 y 24
+    // ya que la variable diff contiene el valor del resultado en milisegundos de la fecha que se quiere lograr.
 
-  return edadEnDias;
+    return edadEnDias;
 }
 
-async function main() {
-  const actualDate = new Date();
+async function main() 
+{
+    const actualDate = new Date();
 
-  const birthDateDay = await ask("¿Cuál es el día de tu fecha de nacimiento?");
-  const birthDateMonth = await ask("¿Cuál es el mes de tu fecha de nacimiento?");
-  const birthDateYear = await ask("¿Cuál es el año de tu fecha de nacimiento?");
-  //const birthDate = await ask("¿Cuál es tu fecha de nacimiento? (formato YYYY-MM-DD)");
-  const birthDate = new Date(`${birthDateYear}-${birthDateMonth}-${birthDateDay}`);
+    const birthDateDay = await ask("¿Cuál es día de tu fecha de nacimiento?: ");
+    const birthDateMonth = await ask("¿Cuál es el mes de tu fecha de nacimiento?: ");
+    const birthDateYear = await ask("¿Cuál es el año de tu fecha de nacimiento?: ");    
 
-  console.log("Haz vivido aproximadamente: ");
-  console.log(`${diffDays(actualDate, birthDate)} días`);
+    //const birthDate = await ask("¿Cuál es el año de tu fecha de nacimiento?: YYYY - MM - DD");
 
+    const birthDate = new Date (`${birthDateYear}-${birthDateMonth}-${birthDateDay}`);
+
+    console.log ("Haz vivido aproximádamente: ");
+    console.log(`${diffDays(actualDate, birthDate)} días`)
+
+    //console.log (actualDate)
+    //console.log (birthDate)
+    //console.log(diff);
 }
-
 main();
