@@ -36,6 +36,10 @@ async function main() {
     },
   ];
 
+  for (let i = 0; i < personas.length; i++) {
+    personas[i].saludar();
+  }
+
   const alumno1 = {
     nombre: "Yei Yei",
     matricula: "AL089778",
