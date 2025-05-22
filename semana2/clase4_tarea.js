@@ -13,13 +13,10 @@
 //
 //La calificación más alta y la más baja
 
-<<<<<<< HEAD
 
 
 const { ask } = require('../helpers/input');
 
-=======
->>>>>>> upstream/main
 function obtenerPromedio(numeros) {
   let total = 0;
   for (let i = 0; i < numeros.length; i++) {
@@ -49,7 +46,6 @@ function obtenerMenor(numeros) {
   }
   return menor;
 }
-<<<<<<< HEAD
 function analizarCalificaciones(calificaciones){
     let aprobados = 0;
     let reprobados = 0;
@@ -58,7 +54,6 @@ function analizarCalificaciones(calificaciones){
     let califBaja= 0;
 }
 
-=======
 
 function obtenerAprobados(numeros) {
   let aprobados = 0;
@@ -92,4 +87,3 @@ async function main() {
 }
 
 main();
->>>>>>> upstream/main
